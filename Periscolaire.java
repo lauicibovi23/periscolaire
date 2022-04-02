@@ -6,98 +6,103 @@ import java.util.*;
  */
 public class Periscolaire {
 
-    /**
-     * Default constructor
-     */
-    public Periscolaire() {
-    }
+    private Vector<Parent> liste_parents = new Vector<Parent>();
 
-    /**
-     * 
-     */
-    private Set<Parent> liste_parents;
+    private Vector<Enfant> liste_enfants = new Vector<Enfant>();
 
-    /**
-     * 
-     */
-    private Set<Enfant> liste_enfants;
+    private Vector<Activite> liste_activites = new Vector<Activite>();
 
-    /**
-     * 
-     */
-    private Set<String> liste_actives;
-
-    /**
-     * 
-     */
     private String nomEcole;
 
-
-
-
+    /**
+      Default constructor
+     **/
+    public Periscolaire(Parent p, Enfant e, String n) {
+    	liste_parents.add(p);
+    	liste_enfants.add(e);
+    	setNomEcole(n);
+    }
 
 
     /**
-     * 
-     */
-    void Ecole() {
-        // TODO implement here
+     ajout d'enfant
+     **/
+    Enfant ajouterEnfant(Enfant premier) {
+        liste_enfants.add(premier);
+        return premier;
     }
 
     /**
      * @return
      */
-    Enfant ajouterEnfant() {
-        // TODO implement here
+    void supprimerEnfant(Enfant enfant1) {
+        if(liste_enfants.contains(enfant1)) {
+        	liste_enfants.remove(enfant1);
+        	System.out.println("ok");
+        	
+        }
+        System.out.println("l'enfant n'existe pas");
+    }
+
+    /**
+     * @return
+     */
+    Enfant consulterEnfant(String nom,String prenom) {
+    	for (int i=0;i<liste_enfants.size();i++) {
+    		(liste_enfants.get(i)).getEnfant(nom,prenom);
+    	}
         return null;
     }
 
     /**
      * @return
      */
-    Enfant supprimerEnfant() {
-        // TODO implement here
-        return null;
-    }
 
     /**
      * @return
      */
-    Enfant consulterEnfant() {
-        // TODO implement here
-        return null;
+    void ajouterActivite(Activite b) {
+        liste_activites.add(b);
     }
 
     /**
-     * @return
+     * suppression d'activite
      */
-    String afficherActivite() {
-        // TODO implement here
-        return "";
+    String supprimerActivite(Activite a) {
+        if (liste_activites.contains(a)) {
+        	liste_activites.remove(a);
+        return "ok";
+        }
+        else return "l'élément n'existe pas";
     }
 
-    /**
-     * @return
-     */
-    String ajouterActivite() {
-        // TODO implement here
-        return "";
-    }
 
-    /**
-     * @return
-     */
-    String supprimerActivite() {
-        // TODO implement here
-        return "";
-    }
+	/**
+	 * @return the nomEcole
+	 */
+	public String getNomEcole() {
+		return nomEcole;
+	}
 
-    /**
-     * @return
-     */
-    String afficheNomEcole() {
-        // TODO implement here
-        return "";
-    }
+	/**
+	 * @param nomEcole the nomEcole to set
+	 */
+	public void setNomEcole(String nomEcole) {
+		this.nomEcole = nomEcole;
+	}
+
+	/**
+	 * @return the liste_actives
+	 */
+	public Vector<Activite> getListe_actives() {
+		return liste_activites;
+	}
+
+	/**
+	 * @param liste_actives the liste_actives to set
+	 */
+	public void setListe_activites(Vector<Activite> liste_actives) {
+		this.liste_activites = liste_actives;
+	}
 
 }

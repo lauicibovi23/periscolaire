@@ -6,6 +6,23 @@ import java.util.*;
  */
 public class Parent extends Personne {
 
+	
+	/**
+     * 
+     */
+    private String etat_matrimonial;
+    
+    private String mail;
+    
+    private int telephone;
+
+    private int revenu_fiscal;
+
+    private Vector<Enfant> enfants = new Vector<Enfant>();
+    
+
+
+	
     /**
      * Default constructor
      */
@@ -13,85 +30,75 @@ public class Parent extends Personne {
     	super(ns,n,p,d);
     	mail = m;
     	telephone = tel;
-    	
+    	etat_matrimonial = "Celibataire";
+    	revenu_fiscal = 0;
     }
+    
 
-    /**
-     * 
-     */
-    private String etat_matrimonial;
-
-    /**
-     * 
-     */
-    private String mail;
-
-    /**
-     * 
-     */
-    private int telephone;
-
-    /**
-     * 
-     */
-    private Double revenu_fiscal;
-
-    /**
-     * 
-     */
-    private Set<Enfant> enfants;
-
-
-
+    
     /**
      * @param Enfant
      * @return 
      */
-     Enfant ajouterEnfant(Enfant a) {
+     public Enfant ajouterEnfant(Enfant a) {
         // TODO implement here
+    	 enfants.add(a);
     	return a; 
     }
+     
+     
 
     /**
      * @return
      */
-     String modifierEtatCivil() {
-        // TODO implement here
-        return "";
+     String modifierEtatMatrimonial(String etat) {
+    	 etat_matrimonial = etat;
+    	 
+        return etat_matrimonial;
     }
 
     /**
-     * @return
-     */
-    String modifierMail() {
-        // TODO implement here
-    	
-        return "";
+     Modification  mail
+     **/
+    String modifierMail(String m) {
+    	mail = m;
+        return mail;
     }
 
     /**
-     * @return
-     */
+    Modification Telephone
+     **/
     int modifierTelephone(int t1) {
-        // TODO implement here
     	telephone = t1;
         return telephone;
     }
 
     /**
-     * @return
-     */
-    Parent getParent() {
-        // TODO implement here
+     
+     **/
+    Parent getParent(int n_secu) {
+        if (n_secu == numero_secu) {
+        	return this;
+        }
+    	
         return null;
     }
 
     /**
      * @return
      */
-    Enfant afficherListeEnfant() {
-        // TODO implement here
-        return null;
+    
+    int modifierRevenu(int r) {
+    	revenu_fiscal = r;
+        return revenu_fiscal;
+        
+        
+    }
+   public void afficherListeEnfant() {
+    	System.out.println("Les enfants de " +this.nom+ "" +this.prenom +"  sont: ");
+   	 	for (int i = 0; i < enfants.size(); i++ ) {
+   	 		System.out.println(enfants.get(i));
+   	 	}
     }
 
 }

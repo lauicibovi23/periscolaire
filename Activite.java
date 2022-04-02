@@ -6,80 +6,59 @@ import java.util.*;
  */
 public class Activite  {
 
+    private String nom_activite;
+
+    private int nombre_enfant;
+
+    private Date date;
+
+    private Encadrant prof;
+    
     /**
      * Default constructor
      */
-    public Activite() {
+    public Activite(String nom, Date d,int n, Encadrant e) {
+    	nom_activite = nom;
+    	date = d;
+    	nombre_enfant = n;
+    	prof =e;
+    		
     }
 
-    /**
-     * 
-     */
-    private String nom_activite;
-
-    /**
-     * 
-     */
-    private int nombre_enfant;
-
-    /**
-     * 
-     */
-    private Date date;
-
-    /**
-     * 
-     */
-    private Encadrant prof;
-
-    /**
-     * 
-     */
-    private Set<Periscolaire> activites;
-
-    /**
-     * 
-     */
-    private Set<Mairie> Activites;
-
-    /**
-     * @return
-     */
-    String modifierNom() {
-        // TODO implement here
-        return "";
+    String modifierNom(String n) {
+    	nom_activite = n;
+        return nom_activite;
     }
 
     /**
      * @return
      */
-    int modifierNombre() {
-        // TODO implement here
-        return 0;
+    int modifierNombre(int n) {
+    	nombre_enfant = n;
+        return nombre_enfant;
     }
 
     /**
      * @return
      */
-    Date modifierDate() {
-        // TODO implement here
-        return null;
+    Date modifierDate(Date d) {
+        date = d;
+        return date;
     }
 
     /**
      * @return
      */
-    public Encadrant modifierProf() {
-        // TODO implement here
-        return null;
+    public Encadrant modifierProf(Encadrant e) {
+        prof = e;
+        return prof;
     }
 
     /**
      * @return
      */
     public Encadrant getProf() {
-        // TODO implement here
-        return null;
+        return this.prof;
     }
 
 }

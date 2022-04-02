@@ -6,62 +6,57 @@ import java.util.*;
  */
 public class Enfant extends Personne{
 
-    /**
-     * Default constructor
-     */
-    public Enfant(int ns,String n, String p, Date d, String c, Parent premier) {
-    	super(ns, n, p, d);
-    	classe = c;
-    	Parent1 = premier;
-    }
-
-    /**
-     * 
-     */
-    private Parent Parent1;
-
-    /**
-     * 
-     */
-    private Parent Parent2;
-
-    /**
-     * 
-     */
+	private String nom;
+	
+	private String prenom;
+	
     private String classe;
 
-    /**
-     * 
-     */
-    private Parent parents;
+    private Vector<Parent> parents = new Vector<Parent>();
 
     /**
-     * 
+     * Default constructor
+     * on considère que un enfant à au moins un parent dans sa liste de parents
      */
-    private Periscolaire enfants;
+    public Enfant(int ns,String n, String p, Date d, String c, Parent responsable) {
+    	super(ns, n, p, d);
+    	classe = c;
+    	parents.add(responsable);
+    	
+    }
+
 
     /**
      * @return
      */
-    public Parent ajouterParent() {
-        // TODO implement here
-        return null;
+    Parent ajouterParent(Parent a) {
+    	parents.add(a);
+        return a;
     }
 
     /**
      * @return
      */
-    String modifierClasse() {
-        // TODO implement here
-        return "";
+    String modifierClasse(String c) {
+    	classe = c;
+        return classe;
     }
 
     /**
      * @return
      */
-    Parent getParent() {
-        // TODO implement here
+    Parent getParent(int n) {
+        for(int i =0; i<parents.size(); i++) {
+        	(parents.get(i)).getParent(n);
+        }
         return null;
+    }
+    
+    Enfant getEnfant(String nom,String prenom) {
+    	if (nom==this.nom && prenom == this.prenom) {
+    		return this;
+    	}
+    	else return null;
     }
 
 

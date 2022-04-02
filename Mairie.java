@@ -5,103 +5,114 @@ import java.util.*;
  * 
  */
 public class Mairie {
+   private String nom;
+
+    private String adresse;
+
+    private Vector<Activite> liste_activites;
+
+    private Vector<Periscolaire> liste_ecoles;
+
+    private Vector<Parent> liste_parents;
 
     /**
      * Default constructor
      */
-    private Mairie() {
+    private Mairie(String n, String a) {
+    	nom = n;
+    	adresse = a;
+    	liste_activites = new Vector<Activite>();
+    	liste_ecoles= new Vector<Periscolaire>();
+    	liste_parents= new Vector<Parent>();
+    	
     }
 
-    /**
-     * 
-     */
-    private String nom;
 
     /**
-     * 
+     * @return
      */
-    private String adresse;
-
-    /**
-     * 
-     */
-    private Set<String> liste_activites;
-
-    /**
-     * 
-     */
-    private Set<String> liste_ecoles;
-
-    /**
-     * 
-     */
-    private Personne liste_personnes;
-
-
-
-
-
-
-    /**
-     * 
-     */
-    void getMairie() {
-        // TODO implement here
+    String getNom() {
+    	return nom;
+    }
+    
+    String getAdresse() {
+    	return adresse;
+    }
+    
+    void modifierAdressse(String a) {
+    	adresse = a;
+    }
+    
+    void afficherListeEcole() {
+        for(int i=0; i<liste_ecoles.size();i++) {
+        	System.out.println(liste_ecoles.get(i));
+        }
+       
     }
 
     /**
      * @return
      */
-    String afficherListeEcole() {
-        // TODO implement here
-        return "";
+    void afficherListeActivite() {
+    	for(int i=0; i<liste_activites.size();i++) {
+        	System.out.println(liste_activites.get(i));
+        }
     }
 
     /**
      * @return
      */
-    String afficherListeActivite() {
-        // TODO implement here
-        return "";
+    void afficherListeParent() {
+    	for(int i=0; i<liste_parents.size();i++) {
+        	System.out.println(liste_parents.get(i));
+        }
+      
     }
 
     /**
      * @return
      */
-    Parent afficherListeParent() {
-        // TODO implement here
-        return null;
+    Personne ajouterParent(Parent a) {
+        liste_parents.add(a);
+        return a;
     }
 
     /**
      * @return
      */
-    Personne ajouterPersonne() {
-        // TODO implement here
-        return null;
+    Activite ajouterActivite(Activite x) {
+        liste_activites.add(x);
+        return x ;
     }
 
     /**
      * @return
      */
-    String ajouterActivite() {
-        // TODO implement here
-        return "";
+    Periscolaire AjouterEcole(Periscolaire x) {
+        liste_ecoles.add(x);
+        return x;
     }
 
     /**
-     * @return
+     calcul du quotient familiale 
      */
-    Periscolaire AjouterEcole() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * 
-     */
-    void quotientFamiliale() {
-        // TODO implement here
+    float quotientFamiliale(int nbre_enfants, float revenu_familial) {
+    	//float revenu_imposable = (revenu_familial/12);
+    	float qf=0;
+    	int n =0;
+    	//les caculs pour les couples
+    	if (nbre_enfants==1) {
+    		qf= (float) (revenu_familial/2.5);
+    	}
+    	else if(nbre_enfants==2){
+    		n=3;
+    		qf=(revenu_familial/n);
+    	}
+    	else if(nbre_enfants>3){
+    		n= nbre_enfants +1;
+    		qf=(revenu_familial/n);
+    	}
+        return qf;
     }
 
     /**
