@@ -144,7 +144,7 @@ public class Mairie {
     }
 
     /**
-     * Fobction pour s'inscrire à la mairie
+     * Fonction pour s'inscrire à la mairie
      */
     void SignUp(String nomParent, String prenomParent, String mail, String motDepasse) {
     	
@@ -165,6 +165,7 @@ public class Mairie {
     	}
         return autorisation_connexion;
     }
+    //recupérer les information d'un parent
     public Parent informationParent(String mail, String mdp) {
     	if(login(mail,mdp)) {
     		for (var parent: this.liste_parents) {
