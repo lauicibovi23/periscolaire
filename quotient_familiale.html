@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+
+    <head>
+        <title>calcul quotient</title>
+        <style type="text/css">
+            
+                h1{
+                font-family: calibri;
+                text-align: left;
+                font-size: 42px;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                margin-left: 0px;
+                margin-bottom: 20px;
+                color: #3C3C3C;
+                background-image: url('../images/template/h1.png');
+                text-transform: uppercase;
+                padding-top: 4px;
+                padding-bottom: 3px;
+                padding-left: 10px;
+                background-color: #A3090C;
+                border-bottom: 4px solid #A3090C;
+                border-left: 3px solid #000000;
+                text-shadow: 0px 0px 2px #C7C7C7;
+       }
+       div{
+           border-bottom:5px solid #A3090C;padding-bottom:15px;
+           
+       }
+        
+           element {
+  border-bottom: 5px solid #A3090C;
+  padding-bottom: 15px;
+}
+p, div, ul, li, td {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3C3C3C;
+}
+    p{
+          font-size: 16px;
+      text-align: justify;
+      line-height: 22px;
+      margin-bottom: 30px;
+      letter-spacing: 0px;
+      padding-left: 1px;
+      padding-right: 12px;
+    }
+    cle{
+        clear:both
+    }
+            #table1 {
+  border: 1px solid #D2D2D2;
+    border-top-color: rgb(210, 210, 210);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(210, 210, 210);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(210, 210, 210);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(210, 210, 210);
+    border-left-style: solid;
+    border-left-width: 1px;
+  border-collapse: collapse;
+}
+.texte table {
+  
+  width: 750px;
+  
+}
+.tab_results {
+  box-shadow: 2px 2px 3px #B1B1B1;
+}
+    
+    .tab_results td {
+  padding: 8px;
+    padding-left: 8px;
+  border-bottom: 1px solid #D2D2D2;
+  font-size: 11px;
+}
+.bouton a {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: bold;
+}
+            
+        </style>
+    </head>
+    <body>
+        <div class="text_contenue">
+            <h1 >calcul de quotient familialle</h1>
+            <p>calculer gratuitement 
+                <strong>votre quotient familial</strong>
+                <br>
+                 Indiquez le revenu annuel net, la situation maritale ainsi que 
+                 le nombre d'enfants à charge du foyer fiscal et les éventuelles parts supplémentaires.
+                 <br>
+                  le quotient familial se calcule en divisant le revenu net imposable 
+                  par le nombre de parts fiscales
+             </p>
+            <form id="formulaire" name="formulaire_impot">
+                <div align="center">
+                    <div class="cle"></div>
+                    <table id="table1" class="tab_results" style="
+                           BORDER-RIGHT: #e2e2e2 1px solid;
+                           BORDER-TOP: #e2e2e2 1px solid; 
+                           BORDER-LEFT: #e2e2e2 1px solid;
+                           BORDER-BOTTOM: #e2e2e2 1px solid; 
+                           BORDER-COLLAPSE: collapse;" width="386" cellspacing="0" cellpadding="0" border="0"
+                           bgcolor="#FFFFFF">
+                        <tbody>
+                            <tr>
+                                <td style="padding-left:20px;" width="233" height="40"> 
+                                    
+                                    <font size="2">
+                                        <strong>revenu net imposable:</strong>   
+                                    </font>
+                                    <br>
+                                    <font size="1">
+                                        Après déduction des différents abattements et
+                                        charges déductibles : abattement de 10 %, frais réels,
+                                       abattement pour personnes âgées ou invalides, etc.
+                                    </font>
+                                </td>
+                                <td width="150" height="40">
+                                    <font size="2">
+                                        <input style="BORDER-RIGHT: #c0c0c0 1px solid;
+                                             BORDER-TOP: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid;
+                                             BORDER-BOTTOM: #c0c0c0 1px solid" siz="14" name="salaire1"> €
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px" width ="233" height="40">
+                                    <font size="2">
+                                        <strong>situation maritale:</strong>
+                                    </font>
+                                </td>
+                                <td width="150" height="40">
+                                    <font size="2">
+                                        <select style="BORDER-RIGHT: #c0c0c0 1px solid; 
+                                                 BORDER-TOP: #c0c0c0 1px solid;
+                                                 BORDER-LEFT: #c0c0c0 1px solid; BORDER-BOTTOM: #c0c0c0 1px solid" size="1" name="situation1" >
+                                            <option value="first">Marié(e)</option>
+                                            <option value="second">Divorcé</option>
+                                            <option value="third" selected="selected">Célibataire</option>
+                                            <option value="second">Veuf(ve)</option>
+                                        </select>
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=" padding-left: 20px ;"width="233" height="40">
+                                    <strong>Nombres d'enfants/Personne(s)à charge:</strong>
+                                    </td>
+
+                                
+                                <td width="150" height="40">                               
+                                 <font size="2">
+                                     <select style="BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; 
+                                             BORDER-LEFT: #c0c0c0 1px solid; BORDER-BOTTOM: #c0c0c0 1px solid" size="1" name="enfant1">
+                                          <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3" selected="selected">3</option>
+                                            <option value="4">4</option>
+                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7" selected="selected">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9" selected="selected">9</option>
+                                            <option value="10">10</option>
+                                     </select>
+                                </font></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:20px;" width="228" height="40">
+                                    <font size=""2>
+                                        <strong>Demi part(s) supplémentaire(s)</strong>
+                                    </font>
+                                    <br>
+                                        <font size="1">Enfant en résidence alternée (0,25 ou 0,5),
+                                            célibataire ou divorcé vivant seul avec un enfant (+ 0,5), invalidité 
+                                            (+ 0,5 par personne invalide au foyer), ancien combattant, etc.
+                                        </font>
+                                </td>
+                                <td  width="150" height="40">
+                                    <font size="2">
+                                    <select style="BORDER-RIGHT: #c0c0c0 1px solid; 
+                                            BORDER-TOP: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BORDER-BOTTOM: #c0c0c0 1px solid;"
+                                            size="1" name="size_part">
+                                        
+                                            <option value="2" selected="selected">0</option>
+                                            <option value="3" selected="selected">0.25</option>
+                                            <option value="4">0.5</option>
+                                            <option value="5">1</option>
+                                            <option value="6">1.5</option>
+                                            <option value="7" >2</option>
+                                            <option value="8">2.5</option>
+                                            <option value="9">3</option>
+                                    </select>
+                                    </font>
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>     
+                    <br>
+                    <br>
+                        
+                        <div>
+                         <div class="button">  
+                              <a id="formulaire_submit" href="#"> votre quotient familial
+                         </a>
+                         </div>
+                         
+             </form>            
+        </div>
+             
+    </body>
+</html>

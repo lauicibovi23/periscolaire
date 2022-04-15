@@ -1,0 +1,104 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+        <!-- importer le fichier de style -->
+      
+<style type="text/css">
+body{
+    background: #DB3641;
+}
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #DB3641;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color:red;
+    color:#DB3641;
+    border: 1px solid #DB3641;
+}
+</style>
+<body>
+        <div id="container">
+            <!-- zone de connexion -->
+            
+            <form action="verification.php" method="POST">
+                <h1>Inscription</h1>
+              <p>Je suis: <label> parent</label>
+                          
+              </p> 
+              
+                      <label for="Futur adhérent à une association ">Répresentant légale
+              <input type="radio" name="futur adhérent à uneassociation" id="futur adhérent à une association" <br>
+</p>
+          
+              
+                
+              <label><b>Nom</b></label>
+                <input type="text" placeholder="Entrer votre nom" name="username" required>
+                <label><b>Prénom</b></label>
+                 <input type="text" placeholder="Entrer votre prénom" name="username" required>
+                <label><b>Adresse mail</b></label>
+                <input type="text" placeholder="Entrer votre adresse mail" name="email" required>
+              <label><b>Nom de votre enfant</b></label>
+              <input type="text" placeholder="Entrer le nom votre enfant" name="email" required>
+              <label><b>date</b></label>
+             <input type="text" placeholder="Entrer la date
+             " name="email" required>
+             
+              
+              <label><b>Type de réservation</b></label>
+              
+              <select name="type" id="type-association">
+                  <option value=""></option>
+                  <option value="caritative">Cantine</option>
+                  <option value="sportive">Sportive</option>
+                  <option value="loisir">Loisir</option>
+                  <option value="culturelle">Culturelle</option>
+              </select>
+
+                <input type="submit" id='submit' value='inscription' >
+                
+                
+            </form>
+        </div>
+    </body>
+</html>
+
+      
+      
+      

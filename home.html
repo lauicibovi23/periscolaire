@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--Code by Divinector (www.divinectorweb.com)-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+	width: 1170px;
+	margin: auto;
+}
+header {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://www.louvignedudesert.org/media/visuel_portail_familles_ville.png);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+.logo {
+	float: left;
+}
+.logo img {
+	width: 100%;
+	padding: 15px 0;
+}
+.welcome-text {
+	position: absolute;
+	width: 600px;
+	height: 300px;
+	margin: 20% 30%;
+	text-align: center;
+}
+.welcome-text h1 {
+	text-align: start;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+.welcome-text h1 span {
+	color: #440606;
+}
+.welcome-text a {
+	border: 1px solid #fff;
+	padding: 10px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 10px;
+	margin-top: 20px;
+	display: inline-block;
+	color: #fff;
+}
+.welcome-text a:hover {
+	background: rgb(87, 2, 2);
+	color: rgb(73, 3, 3);
+}
+/*resposive*/
+
+@media (max-width:600px) {
+	.wrapper {
+		width: 100%;
+	}
+	.logo {
+		float: none;
+		width: 50%;
+		text-align: center;
+		margin: auto;
+	}
+	img {
+		width: 100px; ;
+	} 
+	
+
+	
+	
+	.welcome-text {
+		width: 100%;
+		height: auto;
+		margin: 30% 0;
+	}
+	.welcome-text h1 {
+		font-size: 30px;
+	}
+}
+
+    </style>    
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.postimg.cc/5yMMxXht/banni-re-de-ruban-courb-e-par-rouge-bienvenu-de-logo-98019573.jpg" alt="">
+        </div>
+<div class="welcome-text">
+        <h1>
+			<span>Bienvenue sur votre portail famille </span></h1>
+<a href="new_connexion.html">connexion</a>
+    </div>
+</header>
+
+</body>
+</html>
